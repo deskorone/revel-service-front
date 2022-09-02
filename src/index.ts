@@ -10,8 +10,6 @@ let requestGet = (url : string)=>{
 }
 
 
-
-
 let list : HTMLElement  = document.getElementById("list")
 let ws : WebSocket = new WebSocket("ws://localhost:8080/hotels/ws")
 
@@ -42,7 +40,6 @@ function init(){
 
     ws.onclose = () => {
         console.log("Socket close");
-        
     }
 
 }
@@ -71,7 +68,7 @@ let addHotel = (hotel : IHotel) =>{
 
     let rating : HTMLDivElement = document.createElement('div')
     rating.classList.add('rating')
-    price.innerText = hotel.rating.toString()
+    rating.innerText = hotel.rating.toString()
 
 
     info.appendChild(price)
